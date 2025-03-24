@@ -1,0 +1,89 @@
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup/Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firebaseui@6.1.0/dist/firebaseui.css" />
+</head>
+<body>
+    <h1>Signup/Login</h1>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/firebaseui@6.1.0/dist/firebaseui.js"></script>
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDgzJ-230CK90E2RuLuaEcKiy_PQhY3Jso",
+            authDomain: "dbtest-bd6d9.firebaseapp.com",
+            projectId: "dbtest-bd6d9",
+            storageBucket: "dbtest-bd6d9.appspot.com",
+            messagingSenderId: "330777692807",
+            appId: "1:330777692807:web:07c545489085c121778622",
+            measurementId: "G-2013P3BDB2"
+        };
+
+        // Initialize Firebase
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth(app);
+
+        // FirebaseUI config.
+        const uiConfig = {
+            signInSuccessUrl: '/', // URL to redirect to after a successful sign-in.
+            signInOptions: [
+                // List of OAuth providers supported.
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.EmailAuthProvider.PROVIDER_ID
+            ],
+            tosUrl: 'https://www.example.com/terms', // Terms of service URL
+            privacyPolicyUrl: 'https://www.example.com/privacy', // Privacy policy URL
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                    // User successfully signed in.
+                    // Return type determines whether we continue the redirect automatically
+                    // or whether we leave that to developer to handle.
+                    return true;
+                },
+                uiShown: function() {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
+            }
+        };
+
+        // Initialize the FirebaseUI Widget using Firebase.
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed');
+            const ui = new firebaseui.auth.AuthUI(auth);
+            ui.start('#firebaseui-auth-container', uiConfig);
+        });
+
+        // Monitor auth state
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                console.log(`Logged in as ${user.email}`);
+            } else {
+                console.log('No user');
+            }
+        });
+    </script>
+</body>
+</html> -->
+
+<!-- filepath: c:\Users\joshu\OneDrive\Desktop\GitHub Repos\dbTests\public\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Offline</title>
+</head>
+<body>
+    <h1>Site is currently offline for maintenance.</h1>
+</body>
+</html>

@@ -19,6 +19,7 @@
   "homepage": "https://github.com/The-Potato-knight/dbTests#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "firebase": "^11.5.0"
+    "firebase": "^11.5.0",
+    "firebaseui": "^6.1.0"
   }
 }
